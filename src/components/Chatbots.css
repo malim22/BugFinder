@@ -1,0 +1,191 @@
+.chatbots-container {
+  display: flex;           /* row layout */
+  flex-wrap: wrap;         /* wrap to next row if needed */
+  justify-content: center; /* center the cards */
+  gap: 40px;               /* spacing between cards */
+  padding: 20px 0;
+}
+
+.chatbot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f0f0f0;
+  text-decoration: none;
+  color: #0d1117;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.chatbot-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.4s ease;
+}
+
+.chatbot-card:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 0 25px #00f7ff, 0 0 50px #ff00ff;
+}
+
+.chatbot-card:hover img {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chatbots-container {
+    gap: 20px;
+  }
+
+  .chatbot-card {
+    width: 120px;
+    padding: 15px;
+  }
+
+  .chatbot-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* Section wrapper styling */
+.chatbots-section {
+  padding: 80px 50px;          /* space above and below section */
+  background: #ffffff;         /* clean white background */
+  color: #0d1117;              /* default text color */
+  position: relative;
+}
+
+/* Section heading */
+.chatbots-section .section-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #00f7ff;               /* same neon-blue as Languages heading */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+}
+
+/* Optional underline for heading */
+.chatbots-section .section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff00ff;          /* neon-pink underline */
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Container for chatbot cards */
+.chatbots-container {
+  display: flex;
+  flex-wrap: wrap;             /* wrap to next line if needed */
+  justify-content: center;     /* center the row */
+  gap: 40px;                   /* spacing between cards */
+  margin-top: 20px;
+}
+.chatbots-section .section-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #00f7ff;               /* neon-blue like Languages heading */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+}
+
+.chatbots-section .section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff00ff;          /* neon-pink underline */
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+/* Intro paragraph below heading */
+.chatbots-section .section-intro {
+  text-align: center;       /* center text */
+  font-size: 1.1rem;        /* readable size */
+  color: #0d1117;           /* dark text for white background */
+  margin-bottom: 40px;      /* spacing below paragraph */
+}
+.chatbot-card {
+  position: relative;
+}
+
+/* Tooltip */
+.chatbot-card::after {
+  content: attr(data-tooltip); /* text comes from JSX */
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00f7ff;
+  color: #0d1117;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.chatbot-card:hover::after {
+  opacity: 1;
+}
+.chatbot-card {
+  position: relative; /* required for tooltip */
+}
+
+.chatbot-card::after {
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.chatbot-card:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%; /* above card */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  opacity: 1;
+  z-index: 10;
+}
+.chatbots-intro {
+  text-align: center;       /* center the text */
+  font-size: 1.1rem;        /* slightly bigger text */
+  margin-bottom: 40px;      /* spacing from chatbot cards */
+  color: #aaaaaa;           /* same as Languages section subtext (light gray) */
+  font-weight: 500;         /* slightly lighter than heading */
+}
+.chatbot-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+/* Add a visible class via JS when in viewport */
+.chatbot-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

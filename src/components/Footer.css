@@ -1,0 +1,150 @@
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Footer columns */
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Column heading */
+.footer-col h4 {
+  font-size: 1.5rem;
+  color: #00f7ff; /* same neon-blue as Languages heading */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Column lists */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+/* Clickable email */
+.footer-email {
+  color: #00f7ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+  color: #4da6ff;
+  text-decoration: underline;
+}
+
+/* Chatbot list in 2 columns (desktop) */
+@media (min-width: 769px) {
+  .chatbot-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px 25px;                        /* row gap and column gap */
+  }
+
+  .chatbot-list li {
+    flex: unset;       /* remove flex behavior from original */
+    text-align: left;  /* align left in each column */
+  }
+}
+
+
+.chatbot-list a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(255, 0, 255, 0.1);
+  color: #4da6ff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.chatbot-list a:hover {
+  color: #00f7ff;
+  background: rgba(0, 247, 255, 0.1);
+  text-decoration: underline;
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chatbot-list li {
+    flex: 0 1 45%;          /* 2 per row on mobile */
+  }
+}
+.footer-social {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover img {
+  transform: scale(1.2);
+}
+/* Footer resources classy style */
+.footer-resources {
+  margin-top: 40px;
+  text-align: center; /* everything centered */
+}
+
+.footer-resources h3 {
+  font-size: 1rem;        /* smaller heading size */
+  color: #00f7ff;         /* neon blue */
+  margin: 0;              /* remove ALL margins */
+  padding: 0;             /* reset padding */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;     /* center under section */
+  line-height: 1.5;       /* better vertical alignment */
+}
+.footer-resources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;  /* spacing between groups */
+}
+
+.footer-resources li {
+  margin: 14px 0;  /* space between each link */
+}
+
+.footer-resources a {
+  color: #f0f0f0;   /* soft white */
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-resources a:hover {
+  color: #4da6ff;   /* neon pink hover */
+}

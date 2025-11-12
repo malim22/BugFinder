@@ -1,0 +1,101 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0d1117;
+  color: white;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .languages-container,
+  .chatbots-container,
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .language-card,
+  .chatbot-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+.section {
+  padding: 80px 50px;      /* space above and below each section */
+  position: relative;
+}
+.section-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;          /* space below heading */
+  color: #00f7ff;               /* neon-blue color */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+}
+
+/* Optional underline for style */
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff00ff;          /* neon-pink underline */
+  margin: 10px auto 0 auto;     /* centered below text */
+  border-radius: 2px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+body.dark-mode .navbar {
+  background-color: #222;
+}
+
+body.dark-mode .footer {
+  background-color: #111;
+}
+
+body.dark-mode .chatbots-section {
+  background-color: #222;
+}
+
+body.dark-mode .languages-section {
+  background-color: #222;
+}
